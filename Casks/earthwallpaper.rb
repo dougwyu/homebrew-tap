@@ -12,9 +12,11 @@ cask "earthwallpaper" do
     strategy :github_latest
   end
 
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   app "EarthWallpaper.app"
+
+  zap trash: "~/Library/Preferences/com.earthwallpaper.app.plist"
 
   caveats <<~EOS
     EarthWallpaper is ad-hoc signed, not notarised. Install with
@@ -22,8 +24,4 @@ cask "earthwallpaper" do
     so macOS does not block the first launch, or right-click the app and
     choose Open the first time.
   EOS
-
-  zap trash: [
-    "~/Library/Preferences/com.earthwallpaper.app.plist",
-  ]
 end
