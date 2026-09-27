@@ -3,7 +3,7 @@
 Homebrew casks for [dougwyu](https://github.com/dougwyu)'s macOS apps.
 
 ```bash
-brew install --cask --no-quarantine dougwyu/tap/earthwallpaper
+brew install --cask dougwyu/tap/earthwallpaper
 ```
 
 | Cask | App |

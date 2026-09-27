@@ -19,9 +19,9 @@ cask "earthwallpaper" do
   zap trash: "~/Library/Preferences/com.earthwallpaper.app.plist"
 
   caveats <<~EOS
-    EarthWallpaper is ad-hoc signed, not notarised. Install with
-      brew install --cask --no-quarantine earthwallpaper
-    so macOS does not block the first launch, or right-click the app and
-    choose Open the first time.
+    EarthWallpaper is ad-hoc signed, not notarised, so macOS blocks the first
+    launch. Once, right-click EarthWallpaper in Applications and choose Open
+    (Homebrew carries that approval forward on upgrades), or run:
+      xattr -dr com.apple.quarantine "#{appdir}/EarthWallpaper.app"
   EOS
 end
